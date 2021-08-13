@@ -26,9 +26,7 @@ class Alida(Pokemon):
             Pokemon.lose_health(damage)
             
 
-alida = Alida()
-shen = Pokemon("Shen", 1, "Fire", 10, 10)
-alida.cutie_attack(shen)
+
 
 
 
