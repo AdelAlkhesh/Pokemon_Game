@@ -1,11 +1,11 @@
-
+import random
 
 class Pokemon():
 
-    def __init__(self, name, level, type, max_health, curr_health):
+    def __init__(self, name, type, max_health, curr_health):
 
         self.name = name
-        self.level = 1
+        self.level = random.randrange(1,6)
         self.type = type
         self.max_health = max_health
         self.curr_health = curr_health
@@ -29,7 +29,6 @@ class Pokemon():
             print("Your Pokemon is already at Max HP!")
 
     def knock_out(self):
-
         print("{} has been knocked out!".format(self.name))
 
     def revive(self):
