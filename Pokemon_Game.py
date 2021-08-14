@@ -43,6 +43,42 @@ class Pokemon():
         print("{} levels up and is now level {}!".format(self.name, self.level))
         print("{} now has {} Maximum HP!".format(self.name, self.max_health))
 
+    def attack(self, Pokemon, attack, attack_damage):
+        print("{} used {} against {}".format(self.name, attack, Pokemon.name))
+
+        if (self.type == "Grass" or self.type == "Electric") and (Pokemon.type == "Water"):
+            print("The attack dealt {} damage. It was super effective!".format(
+                attack_damage))
+            Pokemon.lose_health(attack_damage *2) 
+            print(Pokemon.curr_health)
+        
+        elif (self.type == "Fire" or self.type == "Ice") and (Pokemon.type == "Grass"):
+            print("The attack dealt {} damage. It was super effective!".format(
+                attack_damage))
+            Pokemon.lose_health(attack_damage *2) 
+
+        elif (self.type == "Fire") and (Pokemon.type == "Ice"):
+            print("The attack dealt {} damage. It was super effective!".format(
+                attack_damage))
+            Pokemon.lose_health(attack_damage *2) 
+
+        
+        elif (self.type == "Water") and (Pokemon.type == "Fire"): 
+            print("The attack dealt {} damage. It was super effective!".format(
+                attack_damage))
+            Pokemon.lose_health(attack_damage *2) 
+            print(Pokemon.curr_health)
+
+        elif (self.type == "Normal"): 
+            print("The attack dealt {} damage. It was effective!".format(
+                attack_damage))
+            Pokemon.lose_health(attack_damage) 
+            print(Pokemon.curr_health)
+
+        else:
+            print("It was not very effective...")
+            Pokemon.lose_health(attack_damage/2)
+            
 
 
 
