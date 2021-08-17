@@ -6,13 +6,15 @@ class Alida(Pokemon):
 
     def __init__(self):
         self.name = "Alida"
-        self.level = random.randrange(1, 6)
+        #self.level = random.randrange(1,6)
+        self.level = 1
         self.type = "Water"
-        self.max_health = 30 * self.level
+        self.max_health = 20
         self.curr_health = self.max_health
         self.attack_names = ["Kith", "Hug", "Cuddle"]
-        self.attacks = {"Kith": (10 * 1.5 * self.level), "Hug": (7 *1.5 * self.level), "Cuddle": (12 * 1.5 * self.level)}
-
+        self.attacks = {"Kith": (10 * 1.5 * self.level), "Hug": round((7 *(self.level **0.5))), "Cuddle": (12 * 1.5 * self.level)}
+        self.knocked_out = False
+        self.xp_meter = 0
     
     def test_method(self):  #Method for testing purposes. Will be removed later.
         water = Pokemon("Water", "Water", 20, 20)
@@ -64,6 +66,14 @@ class Alida(Pokemon):
         print()
         print()
         water.attack(water, "Test", 10)
+
+
+
+
+
+
+
+
 
 
 

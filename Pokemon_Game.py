@@ -39,7 +39,6 @@ class Pokemon():
         print("{} has been knocked out!".format(self.name))
         self.knocked_out = True
 
-
     def revive(self):
         self.curr_health = self.max_health / 2
         print("{} has been revived with half HP!".format(self.name))
@@ -48,7 +47,7 @@ class Pokemon():
 
     def level_up(self):
         self.level += 1
-        self.max_health += round(self.level ** 0.5)
+        self.max_health +=  round(self.level ** 0.5)
         self.curr_health = self.max_health
         print("{} levels up and is now level {}!".format(self.name, self.level))
         print("{} now has {} Maximum HP!".format(self.name, self.max_health))
@@ -74,26 +73,26 @@ class Pokemon():
 
             if (self.type == "Grass" or self.type == "Electric") and (Pokemon.type == "Water"):
                 print("The attack dealt {} damage. It was super effective!".format(
-                    attack_damage))
+                    attack_damage *2))
                 Pokemon.lose_health(attack_damage * 2)
                 self.xp_gained()
                 
 
             elif (self.type == "Fire" or self.type == "Ice") and (Pokemon.type == "Grass"):
                 print("The attack dealt {} damage. It was super effective!".format(
-                    attack_damage))
+                    attack_damage * 2))
                 Pokemon.lose_health(attack_damage * 2)
                 self.xp_gained()
 
             elif (self.type == "Fire") and (Pokemon.type == "Ice"):
                 print("The attack dealt {} damage. It was super effective!".format(
-                    attack_damage))
+                    attack_damage *2))
                 Pokemon.lose_health(attack_damage * 2)
                 self.xp_gained()
             
             elif (self.type == "Water") and (Pokemon.type == "Fire"):
                 print("The attack dealt {} damage. It was super effective!".format(
-                    attack_damage))
+                    attack_damage *2))
                 Pokemon.lose_health(attack_damage * 2)
                 self.xp_gained()
                 
@@ -104,7 +103,7 @@ class Pokemon():
                 self.xp_gained()
 
             else:
-                print("It was not very effective...")
+                print("The attack deal {} damage. It was not very effective...".format(attack_damage /2))
                 Pokemon.lose_health(attack_damage/2)
                 self.xp_gained()
 
@@ -116,14 +115,8 @@ class Pokemon():
             print("{} is knocked out and cannot perform any attacks! Revive it or select another pokemon to attack with.".format(self.name))
 
 
-shen = Pokemon("Shen", "Fire", 20, 20)
-alida = Pokemon("Alida", "Ice", 400, 400)
-shen.attack(alida, "Fire", 10)
-shen.level_up()
-shen.level_up()
-shen.level_up()
-shen.level_up()
-shen.level_up()
+
+
 
 
 
