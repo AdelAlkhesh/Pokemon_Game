@@ -1,7 +1,7 @@
 from Pokemon_Game import Pokemon
 import random
 
-
+#This is a custom Pokemon class just for testing purposes. Everything here is pretty much placeholder. 
 class Alida(Pokemon):
 
     def __init__(self):
